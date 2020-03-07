@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"github.com/Echosong/beego_blog/models"
-	"strconv"
-	"github.com/Echosong/beego_blog/util"
 	"fmt"
+	"github.com/PandaTtttt/beego_blog/models"
+	"github.com/PandaTtttt/beego_blog/util"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -235,8 +235,11 @@ func (c *AdminController) CategorySave() {
 	id := c.Input().Get("id")
 	category := models.Category{}
 	category.Name = name
+	category.Updated = time.Now()
 	if id == "" {
+		category.Created = time.Now()
 		if _, err := c.o.Insert(&category); err != nil {
+			fmt.Println(err.Error())
 			c.History("插入数据错误", "")
 		} else {
 			c.History("插入数据成功", "/admin/category.html")

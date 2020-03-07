@@ -1,10 +1,10 @@
 package controllers
 
 import (
+	"github.com/PandaTtttt/beego_blog/models"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"strings"
-	"github.com/Echosong/beego_blog/models"
 )
 
 type baseController struct {
