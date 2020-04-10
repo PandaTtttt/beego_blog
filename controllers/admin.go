@@ -82,7 +82,7 @@ func (c *AdminController) About() {
 	c.Ctx.WriteString("About")
 }
 
-//后台首页cccc
+//后台首页cccc-vvvv
 func (c *AdminController) Index() {
 	categorys := [] *models.Category{}
 	c.o.QueryTable( new(models.Category).TableName()).All(&categorys)
